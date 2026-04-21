@@ -32,9 +32,8 @@ function start(){
         }
     }
     document.getElementById("color").style.visibility="visible";
-    document.getElementById("turns").style.visibility="visible";
 
-    turns=100;
+    turns=0;
     document.getElementById("turns").innerHTML="Turns: "+turns;
     nextColor();
 }
@@ -64,7 +63,7 @@ function replaceColor(row, column){
             }
         }else{
             document.getElementById(row+"-"+column).style.backgroundColor=document.getElementById("color").style.backgroundColor;
-            turns--;
+            turns++;
             nextColor();
             document.getElementById("turns").innerHTML="Turns: "+turns;
         }
@@ -74,14 +73,6 @@ function replaceColor(row, column){
 //Checking whether the player completed the game or that the game is over
 function check(){
     if(currentSubPerfectColors.length==0){
-        clear();
-        document.getElementById("result").innerHTML="Game Complete!";
-    }else if(turns==0){
-        clear();
-        document.getElementById("result").innerHTML="Game Failed!";
-    }
-
-    function clear(){
         document.getElementById(line+lineNumber).style.backgroundImage="";
         document.getElementById(line+lineNumber+"opposite").style.backgroundImage="";
         for(var row=1; row<=5; row++){
@@ -89,6 +80,6 @@ function check(){
                 document.getElementById(row+"-"+column).style.visibility="hidden";
         }
         document.getElementById("color").style.visibility="hidden";
-        document.getElementById("turns").style.visibility="hidden";
+        document.getElementById("result").innerHTML="Game Complete!";
     }
 }
