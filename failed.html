@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Stage Failed</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            h3{
+                text-align: center;
+                font-family: 'Times New Roman';
+                font-size: 50px;
+                color: #000000;
+            }
+            #stage{
+                width: 150px;
+                height: 150px;
+                border: 2px solid black;
+                border-radius: 0px;
+            }
+            #retry{
+                width: 50px;
+                height: 50px;
+                background-color: green;
+                font-size: 30px;
+                border: 0px;
+                border-radius: 0px;
+            }
+            #home{
+                width: 50px;
+                height: 50px;
+                background-color: green;
+                font-size: 30px;
+                border: 0px;
+                border-radius: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Stage Failed</h3>
+        <button id="stage"></button>
+        <br><br><br>
+        <button id="retry" onclick="location.href='game.html';">↻</button>
+        <br><br><br>
+        <button id="home" onclick="location.href='stages.html';">🏠</button>
+        <script>
+            document.getElementById("stage").style.backgroundColor=localStorage.getItem("stage");
+        </script>
+    </body>
+</html>

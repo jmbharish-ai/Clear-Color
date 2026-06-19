@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Home</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            #boxNumber{
+                color: #b50707;
+                font-size: 40px; font-family: 'Times New Roman';
+            }
+            #boxName{
+                color: #b50707;
+                font-size: 30px; font-family: 'Times New Roman';
+            }
+            #box{
+                width: 400px; height: 400px;
+                background-color: #941906; color: #512bbc;
+                text-align: center; font-size: 150px; font-family: Georgia, 'Times New Roman', Times, serif;
+                border: 2px solid black; border-radius: 0px;
+            }
+            .changeBox{
+                width: 50px; height: 50px;
+                background-color: #2393ee; color: #11cb52;
+                text-align: center; font-size: 30px; font-family: Arial;
+                border: 0px; border-radius: 0px;
+            }
+        </style>
+    </head>
+    <body onload="setBox(boxNumber)">
+        <h3 id="boxNumber"></h3>
+        <h3 id="boxName"></h3>
+        <button id="box" onclick="
+            if(boxNumber<=Number(localStorage.getItem('box'))){
+                location.href='stages.html';
+                localStorage.setItem('box', String(boxNumber));
+            }else if(boxNumber==Number(localStorage.getItem('box'))+1){
+                if(localStorage.getItem('next box')=='next'){
+                    localStorage.setItem('box', String(boxNumber));
+                    setBox(boxNumber);
+                    localStorage.removeItem('next box');
+                }
+            }
+        "></button>
+        <br>
+        <button class="changeBox" onclick="changeBox('<')"><</button>
+        <button class="changeBox" onclick="changeBox('>')">></button>
+    </body>
+    <script>
+        if(localStorage.getItem("box")===null)
+            localStorage.setItem("box", "0");
+        var boxes=["The World of Sub-Perfect Colors", "Sub-Perfect Colors"];
+        var boxNumber=localStorage.getItem("box");
+        function setBox(box){
+            boxNumber=box;
+            document.getElementById("boxNumber").innerHTML=box+1;
+            document.getElementById("boxName").innerHTML=boxes[box];
+            if(boxNumber<Number(localStorage.getItem('box'))){
+                document.getElementById("box").innerHTML="";
+            }else if(boxNumber==Number(localStorage.getItem('box'))){
+                document.getElementById("box").innerHTML="You";
+            }else if(boxNumber>Number(localStorage.getItem('box'))){
+                document.getElementById("box").innerHTML="🔒";
+            }
+        }
+        function changeBox(previousOrNext){
+            if(previousOrNext=="<"){
+                if(boxNumber>0)
+                    setBox(boxNumber-1);
+            }else if(previousOrNext==">"){
+                if(boxNumber<boxes.length-1)
+                    setBox(boxNumber+1);
+            }
+        }
+    </script>
+</html>
