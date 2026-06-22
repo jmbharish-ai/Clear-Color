@@ -5,6 +5,7 @@ var subPerfectColors=[
     color("1", "Y", "1/2", "R", "1/2"),
     color("1", "B", "1/4", "R", "1/2"),
     color("1", "Y", "1/4", "R", "1/2"),
+    color("1/2", "Y", "1", "R", "1/2"),
     color("1/2", "B", "1", "G", "1/2"),
     color("1/2", "", "0", "G", "1"),
     color("1", "B", "1", "R", "1"),
@@ -40,7 +41,7 @@ var subPerfectColors=[
     color("1/2", "B", "1/4", "R", "1/2"),
     color("1/2", "", "0", "", "0"),
     color("1/2", "B", "1/2", "R", "1"),
-    color("1/2", "Y", "1", "R", "1"),
+    color("1/2", "Y", "1", "R", "1")
 ];
 var currentSubPerfectColors=[]; for(var i=0; i<subPerfectColors.length; i++) currentSubPerfectColors[i]=subPerfectColors[i];
 function randomCurrentSubPerfectColor(){
