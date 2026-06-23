@@ -38,7 +38,7 @@
                 localStorage.setItem('box', String(boxNumber));
             }else if(boxNumber==Number(localStorage.getItem('box'))+1){
                 if(localStorage.getItem('next box')=='next'){
-                    localStorage.setItem('box', String(boxNumber));
+                    localStorage.setItem('you', String(boxNumber));
                     setBox(boxNumber);
                     localStorage.removeItem('next box');
                 }
@@ -49,19 +49,19 @@
         <button class="changeBox" onclick="changeBox('>')">></button>
     </body>
     <script>
-        if(localStorage.getItem("box")===null)
-            localStorage.setItem("box", "0");
+        if(localStorage.getItem("you")===null)
+            localStorage.setItem("you", "0");
         var boxes=["The World of Sub-Perfect Colors", "Sub-Perfect Colors"];
         var boxNumber=localStorage.getItem("box");
         function setBox(box){
             boxNumber=box;
             document.getElementById("boxNumber").innerHTML=box+1;
             document.getElementById("boxName").innerHTML=boxes[box];
-            if(boxNumber<Number(localStorage.getItem('box'))){
+            if(boxNumber<Number(localStorage.getItem("you"))){
                 document.getElementById("box").innerHTML="";
-            }else if(boxNumber==Number(localStorage.getItem('box'))){
+            }else if(boxNumber==Number(localStorage.getItem("you"))){
                 document.getElementById("box").innerHTML="You";
-            }else if(boxNumber>Number(localStorage.getItem('box'))){
+            }else if(boxNumber>Number(localStorage.getItem("you"))){
                 document.getElementById("box").innerHTML="🔒";
             }
         }
