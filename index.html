@@ -52,7 +52,7 @@
         if(localStorage.getItem("you")===null)
             localStorage.setItem("you", "0");
         var boxes=["The World of Sub-Perfect Colors", "Sub-Perfect Colors"];
-        var boxNumber=localStorage.getItem("box");
+        var boxNumber=localStorage.getItem("you");
         function setBox(box){
             boxNumber=box;
             document.getElementById("boxNumber").innerHTML=box+1;
