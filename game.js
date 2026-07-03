@@ -71,18 +71,18 @@ async function clear(){
     clearing=false;
     if(currentSubPerfectColors.length==0)
         location.href="completed.html";
-    function canClear(){ //whether a square in the line is the current color
+    function canClear(){ //whether a square in the line is the current sub-perfect color
         if(line=="row"){
             var colorInLine=false;
             for(var column=1; column<=5; column++){
-                if(document.getElementById(row+"-"+column).style.backgroundColor==document.getElementById("color").style.backgroundColor)
+                if(document.getElementById(lineNumber+"-"+column).style.backgroundColor==document.getElementById("color").style.backgroundColor)
                     colorInLine=true;
             }
             return colorInLine;
         }else if(line=="column"){
             var colorInLine=false;
             for(var row=1; row<=5; row++){
-                if(document.getElementById(row+"-"+column).style.backgroundColor==document.getElementById("color").style.backgroundColor)
+                if(document.getElementById(row+"-"+lineNumber).style.backgroundColor==document.getElementById("color").style.backgroundColor)
                     colorInLine=true;
             }
             return colorInLine;
