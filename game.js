@@ -1,4 +1,5 @@
 var subPerfectColors=[
+    color("1/2", "B", "1/4", "R", "1/2")
 ];
 var currentSubPerfectColors=[]; for(var i=0; i<subPerfectColors.length; i++) currentSubPerfectColors[i]=subPerfectColors[i];
 function randomCurrentSubPerfectColor(){
