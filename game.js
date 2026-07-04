@@ -56,7 +56,7 @@ function replaceColor(row, column){
         }
     }
 }
-async function clear(){
+function clear(){
     clearing=true;
     while(canClear()){
         await new Promise(resolve=>setTimeout(resolve, 1000));
