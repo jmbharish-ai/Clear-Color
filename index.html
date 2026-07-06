@@ -29,7 +29,11 @@
             }
         </style>
     </head>
-    <body onload="setBox(boxNumber)">
+    <body onload="
+        if(localStorage.getItem("you")===null)
+            localStorage.setItem("you", "0");
+        setBox(boxNumber);
+    ">
         <h3 id="boxNumber"></h3>
         <h3 id="boxName"></h3>
         <button id="box" onclick="
@@ -49,8 +53,6 @@
         <button class="changeBox" onclick="changeBox('>')">></button>
     </body>
     <script>
-        if(localStorage.getItem("you")===null)
-            localStorage.setItem("you", "0");
         var boxes=[
             "The World of Sub-Perfect Colors",
             "Placeholder",
