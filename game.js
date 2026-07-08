@@ -41,7 +41,7 @@ function nextColor(){
     lineNumber=Math.floor(Math.random()*5)+1;
     document.getElementById(line+lineNumber).style.backgroundImage="url('line.png')";
     document.getElementById(line+lineNumber+"opposite").style.backgroundImage="url('line.png')";
-    clear();
+    await clear();
 }
 
 //onclick function of the squares
@@ -56,7 +56,7 @@ function replaceColor(row, column){
         }
     }
 }
-function clear(){
+await function clear(){
     clearing=true;
     while(canClear()){
         await new Promise(resolve=>setTimeout(resolve, 1000));
