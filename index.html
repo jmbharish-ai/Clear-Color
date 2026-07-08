@@ -32,7 +32,7 @@
     <body onload="
         if(localStorage.getItem('you')===null)
             localStorage.setItem('you', '0');
-        setBox(localStorage.getItem('you'));
+        setBox(Number(localStorage.getItem('you')));
     ">
         <h3 id="boxNumber"></h3>
         <h3 id="boxName"></h3>
