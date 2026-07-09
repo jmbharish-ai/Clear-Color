@@ -31,7 +31,7 @@ function start(){
 
     turns=150;
     document.getElementById("turns").innerHTML="Turns: "+turns;
-    nextColor();
+    await nextColor();
 }
 async function nextColor(){
     document.getElementById("color").style.backgroundColor=randomCurrentSubPerfectColor();
@@ -50,7 +50,7 @@ function replaceColor(row, column){
         if((line=="row"&&row==lineNumber)||(line=="column"&&column==lineNumber)){
             document.getElementById(row+"-"+column).style.backgroundColor=document.getElementById("color").style.backgroundColor;
             turns--;
-            nextColor();
+            await nextColor();
             document.getElementById("turns").innerHTML="Turns: "+turns;
             if(turns==0) location.href="failed.html";
         }
