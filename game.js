@@ -33,7 +33,7 @@ function start(){
     document.getElementById("turns").innerHTML="Turns: "+turns;
     nextColor();
 }
-function nextColor(){
+async function nextColor(){
     document.getElementById("color").style.backgroundColor=randomCurrentSubPerfectColor();
     document.getElementById(line+lineNumber).style.backgroundImage="";
     document.getElementById(line+lineNumber+"opposite").style.backgroundImage="";
