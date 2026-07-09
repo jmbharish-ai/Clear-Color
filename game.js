@@ -11,7 +11,7 @@ var lineNumber=1;
 var turns;
 var clearing=false;
 
-function start(){
+async function start(){
     document.getElementById("stage").style.backgroundColor=localStorage.getItem("stage");
     for(var i=0; i<subPerfectColors.length; i++) currentSubPerfectColors[i]=subPerfectColors[i];
     for(var row=1; row<=5; row++)
@@ -45,7 +45,7 @@ async function nextColor(){
 }
 
 //onclick function of the squares
-function replaceColor(row, column){
+async function replaceColor(row, column){
     if(!clearing){
         if((line=="row"&&row==lineNumber)||(line=="column"&&column==lineNumber)){
             document.getElementById(row+"-"+column).style.backgroundColor=document.getElementById("color").style.backgroundColor;
