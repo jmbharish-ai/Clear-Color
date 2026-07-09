@@ -33,6 +33,8 @@ async function start(){
     document.getElementById("turns").innerHTML="Turns: "+turns;
     await nextColor();
 }
+window.start=start;
+
 async function nextColor(){
     document.getElementById("color").style.backgroundColor=randomCurrentSubPerfectColor();
     document.getElementById(line+lineNumber).style.backgroundImage="";
@@ -56,6 +58,8 @@ async function replaceColor(row, column){
         }
     }
 }
+window.replaceColor=replaceColor;
+
 async function clear(){
     clearing=true;
     while(canClear()){
